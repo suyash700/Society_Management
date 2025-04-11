@@ -1,0 +1,235 @@
+/* Overall Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F2E9E4; /* Light beige background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* User Update Container */
+.user-update-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 20px;
+    padding: 40px;
+    background-color: #FFFFFF; /* White background for the container */
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-update-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #22223B; /* Dark color for heading */
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #4A4E69; /* Dark gray color for subtext */
+}
+
+/* User Profile Section */
+.user-profile {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for profile picture */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.upload-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(74, 78, 105, 0.8); /* Semi-transparent dark overlay */
+    color: #F2E9E4;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.user-profile:hover .upload-overlay {
+    opacity: 1;
+}
+
+.upload-overlay i {
+    font-size: 14px;
+}
+
+.upload-overlay span {
+    font-size: 14px;
+}
+
+/* Form Styling */
+.update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #4A4E69; /* Dark gray color for labels */
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #4A4E69;
+    background-color: #F2E9E4;
+    color: #22223B;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #9A8C98; /* Light purple-blue border on focus */
+    background-color: #C9ADA7; /* Light beige background on focus */
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.password-input {
+    position: relative;
+}
+
+.password-input i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #4A4E69;
+    transition: color 0.3s ease;
+}
+
+.password-input i:hover {
+    color: #9A8C98;
+}
+
+/* Save Changes Button */
+.save-btn {
+    background-color: #4A4E69; /* Dark purple color */
+    color: #F2E9E4; /* Light beige text */
+    padding: 14px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.save-btn:hover {
+    background-color: #9A8C98; /* Light purple color */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.save-btn:active {
+    transform: translateY(0); /* Button goes back to normal when clicked */
+}
+
+/* Back Button Styling */
+.back-btn {
+    background-color: #4A4E69; /* Dark purple color */
+    color: #F2E9E4; /* Light beige text */
+    padding: 14px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background-color: #9A8C98; /* Light purple color */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.back-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .user-update-container {
+        padding: 20px;
+    }
+
+    .header h2 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .form-group input, .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .save-btn, .back-btn {
+        width: 100%; /* Full width for buttons on mobile */
+    }
+}

@@ -1,0 +1,475 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #F2E9E4 0%, #E9D5D0 100%);
+    color: #22223B;
+    min-height: 100vh;
+}
+
+.payment-page {
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #4A4E69;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #C9ADA7;
+    color: #22223B;
+}
+
+/* Payment Content */
+.payment-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+/* Payment Summary */
+.payment-summary {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.payment-summary h2 {
+    color: #4A4E69;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.summary-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4A4E69;
+}
+
+.status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status.pending {
+    background: #FFF3E0;
+    color: #FF9800;
+}
+
+.status.completed {
+    background: #E8F5E9;
+    color: #4CAF50;
+}
+
+.status.failed {
+    background: #FFEBEE;
+    color: #F44336;
+}
+
+/* Payment Methods */
+.payment-methods {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.payment-methods h3 {
+    color: #4A4E69;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    border-color: #4A4E69;
+    transform: translateY(-5px);
+}
+
+.method-card.selected {
+    border-color: #4A4E69;
+    background: #F8F9FA;
+}
+
+.method-card i {
+    font-size: 2rem;
+    color: #4A4E69;
+    margin-bottom: 0.5rem;
+}
+
+.method-card span {
+    font-size: 1rem;
+    color: #22223B;
+}
+
+/* Payment Container */
+.payment-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.payment-container h2 {
+    color: #4A4E69;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.payment-container p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* QR Code Section */
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #F8F9FA;
+    border-radius: 10px;
+}
+
+.qr-code-container img {
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qr-instructions {
+    text-align: left;
+    color: #666;
+}
+
+.qr-instructions p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qr-instructions p:before {
+    content: "•";
+    color: #4A4E69;
+    font-weight: bold;
+}
+
+/* Card Payment Form */
+.card-payment-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4A4E69;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4A4E69;
+    outline: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Net Banking Options */
+.bank-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.bank-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bank-option:hover {
+    border-color: #4A4E69;
+    background: #F8F9FA;
+}
+
+.bank-option img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Wallet Payment */
+.wallet-payment {
+    text-align: center;
+}
+
+.wallet-balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #F8F9FA;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.balance {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4A4E69;
+}
+
+/* Buttons */
+.show-qr-btn,
+.pay-btn,
+.download-receipt-btn,
+.close-receipt-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.show-qr-btn,
+.pay-btn {
+    background: #4A4E69;
+    color: white;
+    width: 100%;
+}
+
+.show-qr-btn:hover,
+.pay-btn:hover {
+    background: #22223B;
+    transform: translateY(-2px);
+}
+
+.download-receipt-btn {
+    background: #4CAF50;
+    color: white;
+    margin-right: 1rem;
+}
+
+.download-receipt-btn:hover {
+    background: #45a049;
+}
+
+.close-receipt-btn {
+    background: #4A4E69;
+    color: white;
+}
+
+.close-receipt-btn:hover {
+    background: #22223B;
+}
+
+/* Receipt Container */
+.receipt-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    z-index: 1000;
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.success-icon {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.receipt-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.receipt-item:last-child {
+    border-bottom: none;
+}
+
+.receipt-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .payment-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .payment-content {
+        padding: 1rem;
+    }
+
+    .method-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .receipt-actions {
+        flex-direction: column;
+    }
+
+    .receipt-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .bank-list {
+        grid-template-columns: 1fr;
+    }
+}
