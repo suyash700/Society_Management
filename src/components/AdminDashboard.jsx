@@ -46,7 +46,7 @@ const AdminDashboard = () => {
     // const {authorizationToken}=useAuth();
 
     try {
-      const response = await fetch("http://localhost:4000/api/admin/users", {
+      const response = await fetch("https://sms-backend-or7p.onrender.com/api/admin/users", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
