@@ -42,7 +42,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:4000/api/auth/login`, {
+      const response = await fetch(`https://sms-backend-or7p.onrender.com/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Login = () => {
     }
   
     try {
-      const response = await fetch(`http://localhost:4000/api/admin/login`, {
+      const response = await fetch(`https://sms-backend-or7p.onrender.com/api/admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
