@@ -35,7 +35,8 @@ const AuthProvider = ({ children }) => {
                 return;
             }
             console.log("Token before fetch:", token);
-            const response = await fetch("http://localhost:4000/api/auth/user", {
+            const response = await fetch("https://sms-backend-or7p.onrender.com/api/auth/user
+", {
                 method: "GET",
                 headers: {
                     Authorization:`Bearer ${token}` ,
